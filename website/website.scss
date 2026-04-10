@@ -1,0 +1,201 @@
+/*-- scss:defaults --*/
+
+// ── Google Fonts ───────────────────────────────────────────────
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+// ── Colour palette (mirrors slides/custom.scss) ────────────────
+$primary:   #2D3561;   // deep indigo
+$accent:    #EA526F;   // coral
+$teal:      #28A7A7;
+$amber:     #F5A623;
+$light-bg:  #F8F9FF;
+$dark-text: #1A1B2E;
+$muted:     #6B7280;
+
+// ── Bootstrap variable overrides ───────────────────────────────
+$body-color:            $dark-text;
+$body-bg:               #ffffff;
+$link-color:            $accent;
+$link-hover-color:      darken($accent, 12%);
+
+$font-family-sans-serif: 'Inter', system-ui, sans-serif;
+$headings-font-family:   'Space Grotesk', system-ui, sans-serif;
+$font-family-monospace:  'JetBrains Mono', monospace;
+
+$font-size-base:   1.05rem;
+$line-height-base: 1.65;
+
+$headings-font-weight: 700;
+$headings-color:       $primary;
+$headings-line-height: 1.2;
+
+$border-radius:    6px;
+$border-radius-lg: 8px;
+
+// Navbar
+$navbar-bg:              $primary;
+$navbar-dark-color:      rgba(#ffffff, 0.85);
+$navbar-dark-hover-color: #ffffff;
+$navbar-dark-active-color: #ffffff;
+$navbar-padding-y:       0.75rem;
+
+// Table
+$table-border-color:  rgba($primary, 0.12);
+$table-striped-bg:    rgba($primary, 0.03);
+$table-hover-bg:      rgba($primary, 0.06);
+
+// Code
+$code-color:    darken($primary, 4%);
+$code-bg:       #ECEFFE;
+$pre-bg:        #ECEFFE;
+
+/*-- scss:rules --*/
+
+// ── Headings ───────────────────────────────────────────────────
+h1, h2, h3, h4 {
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  border-left: 5px solid $accent;
+  padding-left: 0.5em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  color: $teal;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+// ── Navbar ─────────────────────────────────────────────────────
+.navbar {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  color: #ffffff !important;
+  letter-spacing: -0.02em;
+}
+
+.navbar .nav-link {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+// ── Body and layout ────────────────────────────────────────────
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.page-columns #quarto-content {
+  padding-top: 2rem;
+}
+
+// ── Code ───────────────────────────────────────────────────────
+code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.85em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+pre {
+  border-left: 4px solid $primary;
+  border-radius: 0 6px 6px 0;
+  padding: 1em 1.2em;
+}
+
+pre code {
+  color: $dark-text;
+  background: transparent;
+  padding: 0;
+}
+
+// ── Tables ─────────────────────────────────────────────────────
+.table > thead > tr > th {
+  background-color: $primary;
+  color: #ffffff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  border: none;
+}
+
+// ── Callouts ───────────────────────────────────────────────────
+div.callout {
+  border-radius: 0 6px 6px 0 !important;
+}
+
+div.callout .callout-body {
+  padding-top: 0.5em !important;
+  padding-left: 0.75em !important;
+}
+
+// Map Quarto callout types to the slide palette
+div.callout-tip {
+  border-left-color: $teal !important;
+}
+div.callout-tip .callout-title {
+  background-color: rgba($teal, 0.08) !important;
+  color: darken($teal, 14%);
+}
+
+div.callout-note {
+  border-left-color: $primary !important;
+}
+div.callout-note .callout-title {
+  background-color: rgba($primary, 0.06) !important;
+  color: $primary;
+}
+
+div.callout-important {
+  border-left-color: $accent !important;
+}
+div.callout-important .callout-title {
+  background-color: rgba($accent, 0.07) !important;
+  color: darken($accent, 10%);
+}
+
+div.callout-warning {
+  border-left-color: $amber !important;
+}
+div.callout-warning .callout-title {
+  background-color: rgba($amber, 0.08) !important;
+  color: darken($amber, 24%);
+}
+
+// ── Panel tabsets ──────────────────────────────────────────────
+.panel-tabset .nav-link.active {
+  color: $primary;
+  border-bottom-color: $accent;
+  font-weight: 600;
+}
+
+.panel-tabset .nav-link {
+  color: $muted;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.92rem;
+}
+
+// ── TOC ────────────────────────────────────────────────────────
+#TOC a {
+  color: $muted;
+  font-size: 0.875rem;
+}
+
+#TOC a:hover,
+#TOC a.active {
+  color: $primary;
+}
+
+// ── Footer ─────────────────────────────────────────────────────
+.nav-footer {
+  background-color: $light-bg;
+  border-top: 1px solid rgba($primary, 0.1);
+  font-size: 0.82rem;
+  color: $muted;
+}

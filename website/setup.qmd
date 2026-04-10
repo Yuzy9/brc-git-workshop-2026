@@ -1,0 +1,141 @@
+---
+title: "Setup instructions"
+---
+
+Please work through all four steps below before the workshop. Each one takes just a few minutes.
+
+::: {.callout-tip}
+## Already set up?
+If you already have Git installed, a GitHub account, and GitHub Desktop signed in, you're done — just complete the [pre-workshop survey](#survey) at the bottom of this page.
+:::
+
+---
+
+## Step 1 · Install Git {#install-git}
+
+::: {.panel-tabset}
+
+### Mac
+
+Git is not installed by default on macOS. The easiest way to get it is to install the **Xcode Command Line Tools**:
+
+1. Open **Terminal** (search for it in Spotlight with `Cmd+Space`)
+2. Run:
+   ```bash
+   xcode-select --install
+   ```
+3. A dialogue will appear asking you to install the tools — click **Install** and wait for it to finish (a few minutes)
+4. Once installed, verify it worked:
+   ```bash
+   git --version
+   ```
+   You should see a version number like `git version 2.39.3`.
+
+::: {.callout-note collapse="true"}
+## Alternative: download from git-scm.com
+If you'd prefer a standalone Git installer, download it from [git-scm.com/download/mac](https://git-scm.com/download/mac) and follow the instructions there.
+:::
+
+### Windows
+
+1. Download **Git for Windows** from [git-scm.com/download/win](https://git-scm.com/download/win)
+2. Run the installer. The default settings are fine — click through and accept them.
+3. This installs both Git and **Git Bash** (a terminal for running Git commands on Windows).
+
+Verify: open **Git Bash** (search for it in the Start menu) and run:
+
+```bash
+git --version
+```
+
+:::
+
+---
+
+## Step 2 · Create a GitHub account {#github-account}
+
+If you don't already have one, create a free account at [github.com](https://github.com).
+
+Use your KCL email address — it's useful for research-related repositories and may give you access to additional features via GitHub's academic programme.
+
+::: {.callout-note}
+GitHub accounts are free and personal. You can add other email addresses to your account later, and your repositories stay with you if you move institutions.
+:::
+
+---
+
+## Step 3 · Install GitHub Desktop {#github-desktop}
+
+GitHub Desktop gives you a visual interface for Git — you can see your changes, write commit messages, and push to GitHub without using the command line.
+
+1. Download from [desktop.github.com](https://desktop.github.com) and run the installer
+2. Open GitHub Desktop and sign in with your GitHub account
+
+::: {.callout-note}
+## Command line users
+If you're comfortable in the terminal and prefer to use Git from the command line, that's fine — both paths are covered in the exercises. You may also want to install the **GitHub CLI** (`gh`), which makes authentication easier:
+
+- Mac: `brew install gh`
+- Windows: download from [cli.github.com](https://cli.github.com)
+
+Then run `gh auth login` to authenticate.
+:::
+
+---
+
+## Step 4 · Configure Git {#configure-git}
+
+This step tells Git your name and email so they appear in your commits. You only need to do this once.
+
+Open a terminal (**Terminal** on Mac, **Git Bash** on Windows) and run these three commands, replacing the name and email with your own:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@kcl.ac.uk"
+git config --global init.defaultBranch main
+```
+
+::: {.panel-tabset}
+
+### Mac
+
+```bash
+git config --global core.autocrlf input
+```
+
+### Windows
+
+```bash
+git config --global core.autocrlf true
+```
+
+:::
+
+::: {.callout-tip collapse="true"}
+## What does this do?
+
+- `user.name` and `user.email` — attached to every commit you make, so collaborators know who made each change
+- `init.defaultBranch main` — new repositories will use `main` as the default branch name (the modern convention)
+- `core.autocrlf` — handles line endings correctly between Mac and Windows (avoids spurious file changes)
+
+These settings are stored in a file called `.gitconfig` in your home folder:
+
+- **Mac/Linux:** `~/.gitconfig`
+- **Windows:** `C:\Users\YourName\.gitconfig`
+:::
+
+---
+
+## Step 5 · Complete the pre-workshop survey {#survey}
+
+Please fill in the short survey below so we can understand your background and tailor the session:
+
+**→ [Complete the survey](https://www.menti.com/alzqc39oxjan)**
+
+*(Takes about 2 minutes. Closes 22 April.)*
+
+---
+
+## All done?
+
+You're ready for the workshop. See you on **Wednesday 23 April at 14:00** in Robin Murray A & B.

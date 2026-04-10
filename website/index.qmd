@@ -1,0 +1,74 @@
+---
+title: "Git for people who've been meaning to learn Git (but haven't yet)"
+subtitle: "NIHR Maudsley BRC"
+toc: false
+---
+
+A hands-on introduction to Git and GitHub for researchers — covering the core
+concepts, practical workflows from first commit to collaborative pull request,
+and habits and best practices.
+
+::: {.callout-important}
+## Before the workshop
+Please complete the [setup instructions](setup.qmd) **before 23 April**. The session moves quickly and we won't have time to troubleshoot installations on the day.
+:::
+
+---
+
+## Event details
+
+|  |  |
+|--|--|
+| **Date** | Wednesday 23 April 2026 |
+| **Time** | 14:00–16:00 |
+| **Room** | Robin Murray A & B, IoPPN, Denmark Hill |
+| **Presenter** | Dr Ewan Carr, King's College London |
+
+---
+
+## What you'll learn
+
+**Hour 1 — Concepts and demonstration**
+
+- What Git is and why researchers use it
+- The core vocabulary: repositories, commits, staging, push, pull
+- How to track changes to your files and write useful commit messages
+- How Git and GitHub fit together
+- A live demonstration of the full workflow
+
+**Hour 2 — Hands-on practice**
+
+- Turning an existing project folder into a Git repository
+- Making commits and viewing your history
+- Pushing your work to GitHub
+- Contributing to a shared repository via a pull request
+
+---
+
+## Timetable
+
+| Time | Session |
+|------|---------|
+| 13:30 | Registration and coffee |
+| 14:00 | Welcome and introductions |
+| 14:05 | Hour 1: Concepts and demonstration |
+| 14:55 | *Break* |
+| 15:00 | Hour 2: Hands-on exercises |
+| 15:40 | Group exercise: contributing to a shared repository |
+| 16:00 | Close |
+
+---
+
+## Materials
+
+All materials will be available on this site during and after the workshop.
+
+- [Setup instructions](setup.qmd) — install Git, GitHub Desktop, and create a GitHub account
+- [Exercises](exercises.qmd) — step-by-step instructions for Hour 2
+- Example project — download link on the [exercises page](exercises.qmd)
+
+---
+
+## Questions?
+
+Contact [Ewan Carr](mailto:ewan.carr@kcl.ac.uk) before the session, or ask a helper on the day.

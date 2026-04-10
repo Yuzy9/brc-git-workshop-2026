@@ -1,0 +1,21 @@
+project:
+  type: website
+
+website:
+  title: "Git workshop · NIHR Maudsley BRC"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: setup.qmd
+        text: Setup
+      - href: exercises.qmd
+        text: Exercises
+  page-footer:
+    left: "NIHR Maudsley BRC · King's College London · April 2026"
+
+format:
+  html:
+    theme: [cosmo, website.scss]
+    toc: true
+    code-copy: true
