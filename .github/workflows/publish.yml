@@ -23,11 +23,11 @@ jobs:
       - uses: quarto-dev/quarto-actions/setup@v2
 
       - name: Render website
-        run: quarto render website
+        run: quarto render
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: website/docs
+          path: docs
 
   deploy:
     needs: build

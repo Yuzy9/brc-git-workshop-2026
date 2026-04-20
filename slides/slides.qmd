@@ -638,8 +638,6 @@ To begin, we'll assume we have downloaded the `example/` project folder, which i
 `.gitignore`
 : Rules telling Git not to track `data/` or `outputs/`
 
-<br>
-
 ::: {.box}
 Our goal is to:
 
