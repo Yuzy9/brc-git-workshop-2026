@@ -124,85 +124,17 @@ Make a repository, commit changes, and try the workflow yourself.
 
 ---
 
-## The problem we're trying to solve {.sec background-color="#EA526F"}
-
----
-
-## Problem 1: File names as versions
-
-:::: {.columns}
-
-::: {.column width="40%"}
-![](images/xkcd-documents.png){height="600px" fig-align="center"}
-:::
-
-::: {.column}
-`analysis_final_v4_Ewan.R`
-
-`data-cleaning-March-3rd_new.py`
-
-`data-cleaning-THIS_ONE_WORKS.R`
-
-- Doesn't scale well.
-- No record of what changed or why.
-- Hard to get back to the exact version you need.
-:::
-
-::::
-
----
-
-## Problem 2: Collaborating on code
-
-:::: {.columns}
-
-::: {.column style="width:50%; flex:0 0 50%; display:flex; align-items:center; justify-content:center;"}
-![](images/email-script.png){height="600px" fig-align="center"}
-:::
-
-::: {.column style="width:50%; flex:0 0 50%; display:flex; flex-direction:column; justify-content:center;"}
-- You email a script to a colleague.
-- You both edit it separately.
-- Now there are two diverging versions.
-- No easy way to see the differences or combine the edits.
-:::
-
-::::
-
----
-
-## Why is this a problem?
-
-:::: {.columns}
-
-::: {.column width="58%"}
-- It undermines **reproducibility**. With multiple versions, it becomes hard to know which file produced which result.
-- It is fragile and chaotic.
-- It is hard to see the history of a file.
-- Why did we change the cleaning rule or drop those cases?
-- Two people edited the same file. What changed, and how do we combine it?
-
-:::
-
-::: {.column width="38%"}
-
-![](images/not-fine.png){fig-align="center"}
-
-:::
-
-::::
-
-*We need a better way.*
-
----
-
 ## What is Git? {.sec background-color="#28A7A7"}
 
 ---
 
-::: {.center style="font-size: 2.2em; line-height: 1.6; text-align: center; max-width: 80%; margin: 0 auto;"}
 **Git is software that tracks changes to your files.**
-:::
+
+Without version control:
+
+- File names become versions: `analysis_final_v4_Ewan.R`, `THIS_ONE_WORKS.R`
+- No record of what changed or why
+- Emailing scripts creates diverging copies with no easy way to merge them
 
 ---
 
@@ -260,10 +192,6 @@ We can send and receive changes from the remote. This is referred to as "pushing
 ---
 
 
-## Three reasons to use Git {.sec background-color="#C24B40"}
-
----
-
 :::: {.columns style="font-size:0.9em;"}
 
 ::: {.column width="33%"}
@@ -298,10 +226,6 @@ We can send and receive changes from the remote. This is referred to as "pushing
 ---
 
 ![](images/pmsims-repository.png){width="92%" fig-align="center"}
-
----
-
-![](images/pmsims-readme.png){width="120%" fig-align="center"}
 
 ---
 
