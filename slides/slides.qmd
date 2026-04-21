@@ -30,13 +30,14 @@ format:
         </script>
 ---
 
-## Today
+## Goals for today
 
 1. **A clear mental model of Git** — what it is, what a repository is, and how GitHub fits in.
 2. **Your first repository** — how to start tracking a project without the workflow feeling mysterious.
 3. **A real commit pushed to GitHub** — enough confidence to try this on your own work.
 
-[14:00–15:00 Concepts and demonstrations · 15:00–16:00 Practice]{.muted}
+[14:00–15:00 Concepts and demonstrations]{.muted}<br>
+[15:00–16:00 Practice]{.muted}
 
 ---
 
@@ -58,11 +59,19 @@ format:
 
 ---
 
-Without version control:
+## Without version control
+
+:::: {.columns}
+::: {.column width="70%"}
 
 - File names become versions: `analysis_final_v4_Ewan.R`, `THIS_ONE_WORKS.R`
 - No record of what changed or why
-- Emailing scripts creates diverging copies with no easy way to merge them
+- Collaboration (e.g., via email) creates diverging copies with no easy way to merge them
+:::
+::: {.column width="30%"}
+![](images/not-fine.png){fig-align="center"}
+:::
+::::
 
 ---
 
@@ -119,8 +128,9 @@ We can send and receive changes from the remote. This is referred to as "pushing
 
 ---
 
+## Why Git?
 
-:::: {.columns style="font-size:0.9em;"}
+:::: {.columns style="font-size:0.8em;"}
 
 ::: {.column width="33%"}
 [1. Complete history]{.reason-card-title}
@@ -163,27 +173,27 @@ We can send and receive changes from the remote. This is referred to as "pushing
 
 ## Working with a local repository
 
-:::: {.key-terms-grid}
+:::: {.key-terms-grid style="grid-template-columns: repeat(3, minmax(0, 1fr));"}
 
 ::: {.key-term-card .key-term-file-state}
 ::: {.key-term-title}
 Tracked / untracked
 :::
-A file is untracked until you tell Git to watch it. After that, Git treats it as tracked.
+New files in your folder are invisible to Git until you add them. Once added, Git watches them for changes.
 :::
 
 ::: {.key-term-card .key-term-staging}
 ::: {.key-term-title}
 Staging
 :::
-Staging means choosing which tracked changes should go into the next commit.
+Before committing, you choose which changes to include. This lets you be deliberate about what goes into each commit.
 :::
 
 ::: {.key-term-card .key-term-commit}
 ::: {.key-term-title}
 Commit
 :::
-A commit is a saved snapshot of the staged changes at one point in time.
+A saved snapshot of your project at a point in time, with a message, author, and timestamp.
 :::
 
 ::::
@@ -240,8 +250,8 @@ A commit is a saved snapshot of the staged changes at one point in time.
 ::: {.column width="58%"}
 <div class="workflow-definition">
   <div class="workflow-definition-kicker">Step 2</div>
-  <div class="workflow-definition-title">Tell Git which files belong in the repository</div>
-  <p>The files are already in your folder. This step tells Git to start tracking them.</p>
+  <div class="workflow-definition-title">Add files to the folder and tell Git to track them</div>
+  <p>Copy your project files in, then tell Git which ones to watch.</p>
 </div>
 :::
 ::::
@@ -450,18 +460,19 @@ We'll work with a downloaded `example/` project folder, which includes:
 : The cleaning script
 
 `data/admissions.csv`
-: The raw data, present locally but ignored by Git
+: The raw data — present locally, but we'll tell Git to ignore it
 
-`.gitignore`
-: Rules telling Git not to track `data/` or `outputs/`
+`outputs/model_predictions.csv`
+: Generated outputs — also ignored
 :::
 
 ::: {.column style="width:45%; flex:0 0 45%;"}
 ::: {.box}
 Our goal is to:
 
-1. Put this project under version control; and
-2. Make two commits.
+1. Create a new repository in GitHub Desktop
+2. Copy the project files in and ignore `data/`
+3. Make two commits.
 :::
 :::
 
@@ -472,10 +483,11 @@ Our goal is to:
 ## Demo 1 · Initialise and first commit
 
 ::: {.task-panel}
-<div class="task-item">Open GitHub Desktop</div>
-<div class="task-item">**File → Add Local Repository** → choose the `example/` folder</div>
-<div class="task-item">Click **Create a Repository** when prompted</div>
-<div class="task-item">All project files appear in the Changes panel and are selected for the first commit</div>
+<div class="task-item">**File → New Repository** → name it `admissions-example` → **Create Repository**</div>
+<div class="task-item">Copy the contents of `example/` into the new `admissions-example` folder</div>
+<div class="task-item">Return to GitHub Desktop — the files appear in the Changes panel</div>
+<div class="task-item">Right-click `data` → **Ignore all files in `data/`**; repeat for `outputs` — GitHub Desktop writes `.gitignore` automatically</div>
+<div class="task-item">Review the remaining files: `README.md`, `scripts/`, `.gitignore`</div>
 <div class="task-item">Write commit message: *Initial commit: add admissions example project*</div>
 <div class="task-item">Click **Commit to main**</div>
 :::
@@ -511,7 +523,7 @@ Initialise, add, and commit:
 ::: {style="font-size: 1.4em;"}
 ```bash
 git init                        # Initialise the repository
-git add .                       # Stage all files
+git add README.md scripts/      # Stage the files to track
 git commit -m "Initial commit"  # Save the first snapshot
 ```
 :::
@@ -525,6 +537,26 @@ git add scripts/clean.R         # Stage the changed file
 git commit -m "Add comment to cleaning script"
 git log --oneline               # View the history
 ```
+:::
+
+---
+
+## What if you already have a project folder?
+
+Use `git init` to initialise the repository, then open it in GitHub Desktop:
+
+::: {style="font-size: 1.3em;"}
+```bash
+git init
+```
+:::
+
+Then in GitHub Desktop: **File → Add Local Repository** → choose the folder.
+
+From there, review the Changes panel, ignore anything that shouldn't be tracked, and make your first commit — exactly as we just did.
+
+::: {.callout-warning}
+If you use **File → New Repository** inside a folder that already contains files, GitHub Desktop will stage everything automatically. That is usually not what you want.
 :::
 
 ---
@@ -820,8 +852,6 @@ git switch main
 
 ---
 
-
-
 ## Demonstration · Switch to a branch and back again
 
 ::: {.task-panel}
@@ -836,20 +866,34 @@ git switch main
 
 ---
 
-
-
-
 ## Collaboration {.sec background-color="#6B4E9B"}
 
 ---
 
-![](images/hub-spoke-alt.png){fig-width="78%" fig-align="center"}
+![](images/flow-1.png){fig-align="center"}
 
-GitHub is the single source of truth.
+---
 
-## When collaborating, use feature branches
+::: {style="text-align: center;"}
+Everyone has a local copy. Push and pull to the remote.
+:::
 
-Never work directly on `main` — create a **feature branch** for each piece of work.
+![](images/collab-1.png){fig-align="center"}
+
+---
+
+::: {style="text-align: center;"}
+Everyone has a local copy. Push and pull to the remote.
+:::
+
+![](images/collab-2.png){fig-align="center"}
+
+---
+
+## Use feature branches when collaborating
+
+Never work directly on `main`. Create a **feature branch** for each piece of
+work.
 
 :::: {.columns}
 
@@ -873,13 +917,15 @@ Never work directly on `main` — create a **feature branch** for each piece of 
 
 ---
 
-## What is a PR?
+## Pull requests (PR)
 
-- A request to merge your changes into `main`
-- Others can:
-  - Review your code
-  - Suggest changes
-  - Approve and merge
+A pull request is a way of asking to [merge a branch]{.alert} into `main`.
+
+1. Create a new branch (e.g. `implement-xgboost-model`)
+2. Make and commit changes on that branch
+3. On GitHub, open a pull request to merge into `main`
+
+The PR allows others to [review and approve]{.alert} your code, or suggest changes.
 
 ## A simple workflow to follow
 

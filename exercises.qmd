@@ -89,7 +89,7 @@ faster to fix this before the exercises than halfway through.
 
 *~15 minutes · 15:05–15:20*
 
-You're going to turn the example project folder into a Git repository, make your first commit, make a change, and commit that too.
+You're going to create a new Git repository, copy the example project files into it, make your first commit, make a change, and commit that too.
 
 ### Step 1: Create a repository
 
@@ -97,10 +97,9 @@ You're going to turn the example project folder into a Git repository, make your
 
 ### GitHub Desktop
 
-1. In GitHub Desktop, go to **File → Add Local Repository**
-2. Click **Choose...** and navigate to the unzipped `example` folder
-3. GitHub Desktop will say *"This directory does not appear to be a Git repository."* — click **create a repository**
-4. Leave the settings as they are and click **Create Repository**
+1. In GitHub Desktop, go to **File → New Repository**
+2. Give it a name — e.g. `admissions-example` — and choose where to save it (e.g. your Desktop). GitHub Desktop will create the folder for you.
+3. Leave all other settings as they are and click **Create Repository**
 
 ### Command line
 
@@ -118,23 +117,33 @@ You're going to turn the example project folder into a Git repository, make your
 
 ::: {.callout-tip}
 ## What just happened?
-Git created a hidden `.git` folder inside your project. That folder *is* the repository — it stores all the history. Your files haven't changed at all.
+Git created a hidden `.git` folder. That folder *is* the repository — it stores all the history. Your files haven't changed.
 :::
 
-### Step 2: Make your first commit
+### Step 2: Copy your files in and make your first commit
 
 ::: {.panel-tabset}
 
 ### GitHub Desktop
 
-1. You should see all the project files listed as **changes** in the left panel
-2. In the bottom-left, write a commit message: `Initial commit`
-3. Click **Commit to main**
+First, copy the project files in:
+
+1. Open the unzipped `example` folder in Finder (Mac) or File Explorer (Windows)
+2. Copy everything inside it into the `admissions-example` folder you just created
+
+Then, back in GitHub Desktop:
+
+3. The files you copied appear in the **Changes** panel on the left
+4. Right-click `data` in the list and choose **Ignore all files in `data/`** — GitHub Desktop writes a `.gitignore` file and `data/` disappears from the list
+5. Do the same for `outputs`: right-click → **Ignore all files in `outputs/`**
+6. Review the remaining files: you should see `README.md`, `scripts/`, and `.gitignore`
+7. In the bottom-left, write a commit message: `Initial commit`
+8. Click **Commit to main**
 
 ### Command line
 
 ```bash
-git add .
+git add README.md scripts/ .gitignore
 git commit -m "Initial commit"
 ```
 
